@@ -6,7 +6,7 @@ import javafx.scene.control.ButtonType;
 
 /**
  * Párbeszédpanelek
- * @author Tóth József
+ * @author Czégel Vanessza
  */
 public class Panel {
 
