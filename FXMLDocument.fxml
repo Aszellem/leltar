@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="leltar.FXMLDocumentController">
+  <tabs>
+    <Tab text="Termek">
+         <content>
+            <HBox spacing="10.0">
+               <children>
+                  <TableView fx:id="tblTermek">
+                    <columns>
+                      <TableColumn fx:id="oTerem" prefWidth="100.0" text="Terem" />
+                      <TableColumn fx:id="oFelhasznalas" prefWidth="240.0" text="Felhasználás" />
+                    </columns>
+                  </TableView>
+                  <VBox spacing="10.0">
+                     <children>
+                        <GridPane hgap="10.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints fillHeight="false" />
+                            <RowConstraints fillHeight="false" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Terem:" />
+                              <Label text="Felhasználás:" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtTerem" prefWidth="270.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtFelhasznalas" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <HBox fillHeight="false" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#terem_uj" prefWidth="80.0" text="Új" />
+                              <Button mnemonicParsing="false" onAction="#terem_hozzaad" prefWidth="80.0" text="Hozzáad" />
+                              <Button mnemonicParsing="false" onAction="#terem_modosit" prefWidth="80.0" text="Módosít" />
+                              <Button mnemonicParsing="false" onAction="#terem_torol" prefWidth="80.0" text="Töröl" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </content>
+    </Tab>
+    <Tab text="Eszközök">
+         <content>
+            <HBox spacing="10.0">
+               <children>
+                  <TableView fx:id="tblEszkozok">
+                    <columns>
+                      <TableColumn fx:id="oNev" prefWidth="150.0" text="Név" />
+                      <TableColumn fx:id="oJellemzok" prefWidth="190.0" text="Jellemzők" />
+                    </columns>
+                  </TableView>
+                  <VBox spacing="10.0">
+                     <children>
+                        <GridPane hgap="10.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Név:" />
+                              <Label text="Jellemzők:" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtNev" prefWidth="250.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtJellemzok" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <HBox prefHeight="100.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#eszkoz_uj" prefWidth="80.0" text="Új" />
+                              <Button mnemonicParsing="false" onAction="#eszkoz_hozzaad" prefWidth="80.0" text="Hozzáad" />
+                              <Button mnemonicParsing="false" onAction="#eszkoz_modosit" prefWidth="80.0" text="Módosít" />
+                              <Button mnemonicParsing="false" onAction="#eszkoz_torol" prefWidth="80.0" text="Töröl" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </content>
+    </Tab>
+      <Tab text="Leltár">
+         <content>
+            <VBox fillWidth="false" spacing="10.0">
+               <children>
+                  <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" />
+                      <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Terem:" />
+                        <Label text="Eszköz:" GridPane.rowIndex="1" />
+                        <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Ár:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                        <Label text="Év:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label text="Megjegyzes:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cbxTerem" prefWidth="220.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="cbxEszkoz" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtAr" GridPane.columnIndex="3" />
+                        <TextField fx:id="txtEv" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtMegjegyzes" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onAction="#leltar_uj" prefWidth="100.0" text="Új" GridPane.columnIndex="4" />
+                        <Button mnemonicParsing="false" onAction="#leltar_hozzaad" prefWidth="100.0" text="Hozzáad" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#leltar_torol" prefWidth="100.0" text="Töröl" GridPane.columnIndex="5" />
+                        <Button mnemonicParsing="false" onAction="#leltar_modosit" prefWidth="100.0" text="Módosít" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#export" prefWidth="100.0" text="Exportálás" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tblLeltar">
+                    <columns>
+                      <TableColumn fx:id="oID" prefWidth="50.0" text="ID" />
+                      <TableColumn fx:id="oTerem2" prefWidth="50.0" text="Terem" />
+                        <TableColumn fx:id="oEszkoz2" prefWidth="200.0" text="Eszköz" />
+                        <TableColumn fx:id="oAr" prefWidth="100.0" style="-fx-alignment: center;" text="Ár" />
+                        <TableColumn fx:id="oEv" prefWidth="50.0" style="-fx-alignment: center;" text="Év" />
+                        <TableColumn fx:id="oMegjegyzes" prefWidth="250.0" text="Megjegyzés" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
